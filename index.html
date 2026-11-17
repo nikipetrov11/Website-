@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MKeysPlovdiv · Авто ключове и кодиране</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700&display=swap">
+
+<style>
+:root{--bg:#0c0e12;--bg2:#13161c;--card:#171a21;--text:#f1f3f7;--muted:#98a0ae;--accent:#ff6a2b;--accent2:#ffb347;--line:#262a33;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f6f3;--bg2:#ecece7;--card:#fff;--text:#14161b;--muted:#5c6370;--accent:#e24f0c;--accent2:#f59e0b;--line:#e0e0d9;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6f6f3;--bg2:#ecece7;--card:#fff;--text:#14161b;--muted:#5c6370;--accent:#e24f0c;--accent2:#f59e0b;--line:#e0e0d9;color-scheme:light}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}.logo b{color:var(--accent)}.logo svg{width:54px;height:25px;flex:none;color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;margin-left:16px}
+nav a:hover{color:var(--text)}
+.hero{padding:72px 0 56px;background:radial-gradient(800px 360px at 80% -10%,color-mix(in srgb,var(--accent) 28%,transparent),transparent),var(--bg)}
+.pill{display:inline-block;font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--muted);margin-bottom:18px}
+h1{font-size:clamp(2.2rem,8vw,4rem);line-height:1.05;margin:0 0 16px;letter-spacing:-.035em;max-width:720px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin:0 0 28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:600;text-decoration:none;margin:0 8px 8px 0}
+.btn.p{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#111}
+.btn.g{border:1px solid var(--line);color:var(--text)}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.stats b{display:block;font-size:1.5rem}.stats span{color:var(--muted);font-size:.85rem}
+section{padding:52px 0}
+h2{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.ph{aspect-ratio:16/10;background:linear-gradient(135deg,var(--bg2),color-mix(in srgb,var(--accent) 22%,var(--bg2)));display:flex;align-items:center;justify-content:center;font-size:2.4rem;position:relative}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph small{position:absolute;bottom:8px;right:10px;font-size:.68rem;color:var(--muted);opacity:.8}
+.body{padding:16px 18px 20px}
+.body h3{margin:4px 0 6px;font-size:1.1rem}
+.body p{margin:0;color:var(--muted);font-size:.93rem}
+.badge{font-size:.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.07em}
+.meta{font-size:.8rem;color:var(--muted);margin-top:10px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tags button{border:1px solid var(--line);background:transparent;color:var(--text);padding:8px 16px;border-radius:999px;font:inherit;font-size:.88rem;cursor:pointer}
+.tags button.on{background:var(--accent);border-color:var(--accent);color:#111;font-weight:600}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;text-align:center}
+.contact a{color:var(--accent);font-weight:700;text-decoration:none}
+footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:.8rem}
+body{font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}h1,h2,.logo{font-family:Unbounded,Manrope,system-ui,sans-serif}h1{font-size:clamp(2rem,7.5vw,4.6rem);font-weight:700;line-height:1.04;letter-spacing:-.04em}h2{font-weight:600;letter-spacing:-.03em}.logo{font-size:.95rem}nav{background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(18px) saturate(1.5)}.hero{position:relative;overflow:hidden;padding:96px 0 76px;background:var(--bg)}.hero .wrap{position:relative;z-index:1}.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:fl 14s ease-in-out infinite alternate}.b1{width:420px;height:420px;background:var(--accent);top:-130px;right:-90px}.b2{width:360px;height:360px;background:#7c3aed;bottom:-170px;left:-110px;animation-delay:-6s}@keyframes fl{to{transform:translate(40px,30px) scale(1.15)}}.pill{background:color-mix(in srgb,var(--card) 60%,transparent);backdrop-filter:blur(8px)}.btn{border-radius:999px;padding:14px 26px}.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2)}.marq div{display:flex;gap:40px;width:max-content;padding:14px 0;animation:mq 30s linear infinite}.marq span{font-family:Unbounded,Manrope,sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);white-space:nowrap}.marq span::after{content:"\2726";margin-left:40px;color:var(--accent)}@keyframes mq{to{transform:translateX(-50%)}}#list{grid-template-columns:repeat(6,1fr);gap:14px}#list .card{grid-column:span 2}#list .card:nth-child(5n+1),#list .card:nth-child(5n+2){grid-column:span 3}.card{border-radius:26px;background:color-mix(in srgb,var(--card) 72%,transparent);backdrop-filter:blur(10px);animation:rise .7s cubic-bezier(.2,.7,.2,1) both}.card:nth-child(2){animation-delay:.08s}.card:nth-child(3){animation-delay:.16s}.card:nth-child(4){animation-delay:.24s}.card:nth-child(5){animation-delay:.32s}@keyframes rise{from{opacity:0;transform:translateY(26px)}}.card:hover{transform:translateY(-6px);box-shadow:0 24px 60px -24px color-mix(in srgb,var(--accent) 60%,transparent)}.ph{aspect-ratio:4/3}.ph img{transition:transform .6s}.card:hover .ph img{transform:scale(1.06)}.body h3{font-family:Unbounded,Manrope,sans-serif;font-size:1rem;font-weight:600}@media(max-width:760px){#list{grid-template-columns:1fr}#list .card{grid-column:auto!important}.hero{padding:72px 0 56px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><div class="logo"><svg viewBox="0 0 64 28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21H3v-4q0-2.5 3-3l9-1.5 7-5.5q1.5-1 3.5-1H40q2.5 0 4 1.5l5 5 8 1.5q4 1 4 4V21h-8M43 21H21"/><path d="M21 12.5l5-5h14l5 5zM33 7.5v5"/><circle cx="16" cy="21" r="5" fill="var(--bg)"/><circle cx="48" cy="21" r="5" fill="var(--bg)"/><circle cx="16" cy="21" r="1.5"/><circle cx="48" cy="21" r="1.5"/><path d="M58 16.5h3"/></svg><span>MKeys<b>Plovdiv</b></span></div><div><a href="#raboti">Работи</a></div></div></nav>
+
+<header class="hero"><i class="blob b1"></i><i class="blob b2"></i><div class="wrap">
+<h1>Моите проекти по <span>автомобили</span></h1>
+<p>Неща, които правя по коли: ключове, кодиране и програмиране.</p>
+<p>0887378844</p>
+<a class="btn p" href="#raboti">Виж работите</a>
+
+</div></header>
+<div class="marq" aria-hidden="true"><div><span>Ключове</span><span>Кодиране</span><span>Програмиране</span><span>OBD</span><span>Диагностика</span><span>Имобилайзер</span><span>Ключове</span><span>Кодиране</span><span>Програмиране</span><span>OBD</span><span>Диагностика</span><span>Имобилайзер</span></div></div>
+
+<section id="raboti" style="background:var(--bg2)"><div class="wrap">
+<h2>Последни работи</h2><p class="sub">Неща, които съм направил за себе си и за познати.</p>
+<div class="tags" id="tags"></div>
+<div class="grid" id="list"></div>
+</div></section>
+
+<footer>© 2026 MKeysPlovdiv · Лично портфолио, без платени услуги. Всичко е направено със съгласието на собственика на автомобила.</footer>
+
+<script src="raboti.js"></script>
+<script>
+(function(){
+var IC={"Ключове":"🔑","Кодиране":"⚙️","Програмиране":"💻"},cat="all";
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function card(x){
+var a=el("article","card"),ph=el("div","ph",IC[x.category]||"🚗");
+if(x.photo){var im=el("img");im.src=x.photo;im.alt=x.title;im.loading="lazy";im.onerror=function(){im.remove()};ph.appendChild(im)}
+var b=el("div","body");
+b.appendChild(el("span","badge",x.category));
+b.appendChild(el("h3",0,x.title));
+b.appendChild(el("p",0,x.text));
+b.appendChild(el("div","meta",x.car));
+a.appendChild(ph);a.appendChild(b);return a}
+function render(){var l=document.getElementById("list");l.innerHTML="";
+RABOTI.forEach(function(x){if(cat==="all"||x.category===cat)l.appendChild(card(x))})}
+var tg=document.getElementById("tags"),cats=["all"];
+RABOTI.forEach(function(x){if(cats.indexOf(x.category)<0)cats.push(x.category)});
+cats.forEach(function(c){var b=el("button",c==="all"?"on":"",c==="all"?"Всички":c);b.dataset.c=c;tg.appendChild(b)});
+tg.addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+tg.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});t.classList.add("on");cat=t.dataset.c;render()});
+render();
+})();
+</script>
+</body>
+</html>
